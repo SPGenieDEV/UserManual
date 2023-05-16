@@ -6,20 +6,37 @@ const TabpanelComponent = ({ type }) => {
     return (
         <TabPanel>
                 <Flex>
-                    <BoxComponent
+                    {type === 'installation' &&
+                        <BoxComponent
                         w="50%"
                         headingText="SPGenie Tool - Frontend"
                         bodyText="SPGenie Tool is a tool to predict story points for a given user story."
                         type={type}
                         to='spgenie-tool-frontend'
-                    />
-                    <BoxComponent
-                        w="50%"
-                        headingText="SPGenie Tool - Backend"
+                        />
+                    }
+                    
+                    {type === 'user-manual' &&
+                        <BoxComponent
+                        w="100%"
+                        headingText="SPGenie Tool - Frontend"
                         bodyText="SPGenie Tool is a tool to predict story points for a given user story."
                         type={type}
-                        to='spgenie-tool-backend'
-                    />
+                        to='spgenie-tool-frontend'
+                        />
+                    }
+
+                    {type === 'installation' && 
+                        <BoxComponent
+                            w="50%"
+                            headingText="SPGenie Tool - Backend"
+                            bodyText="SPGenie Tool is a tool to predict story points for a given user story."
+                            type={type}
+                            to='spgenie-tool-backend'
+                        />
+                    
+                    }
+                    
                 </Flex>
                 <Flex>
                     <BoxComponent
